@@ -29,7 +29,7 @@ A Neovim plugin to spin up, manage and connect to **PostgreSQL Docker containers
 
 ```lua
 {
-  "YOUR_GITHUB_USERNAME/pg-docker.nvim",
+  "BeastInBash/pg-docker.nvim",
   cmd = { "PgCreate", "PgQuickStart", "PgStop", "PgRemove", "PgLogs", "PgList", "PgLog" },
   opts = {},
 }
@@ -39,7 +39,7 @@ With custom defaults and keymaps:
 
 ```lua
 {
-  "YOUR_GITHUB_USERNAME/pg-docker.nvim",
+  "BeastInBash/pg-docker.nvim",
   cmd = { "PgCreate", "PgQuickStart", "PgStop", "PgRemove", "PgLogs", "PgList", "PgLog" },
   keys = {
     { "<leader>pgn", desc = "pg-docker: new container" },
@@ -69,7 +69,7 @@ With custom defaults and keymaps:
 
 ```lua
 use {
-  "YOUR_GITHUB_USERNAME/pg-docker.nvim",
+  "BeastInBash/pg-docker.nvim",
   config = function()
     require("pg-docker").setup({})
   end
