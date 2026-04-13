@@ -1,0 +1,62 @@
+*pg-docker.txt*  Manage PostgreSQL Docker containers from Neovim
+
+==============================================================================
+CONTENTS                                                    *pg-docker-contents*
+
+  1. Introduction ............. |pg-docker-intro|
+  2. Commands ................. |pg-docker-commands|
+  3. Configuration ............ |pg-docker-config|
+  4. Keymaps .................. |pg-docker-keymaps|
+
+==============================================================================
+1. INTRODUCTION                                               *pg-docker-intro*
+
+pg-docker.nvim lets you spin up, stop, and inspect PostgreSQL Docker
+containers without leaving Neovim.
+
+==============================================================================
+2. COMMANDS                                                *pg-docker-commands*
+
+:PgCreate        Step-by-step wizard to create a new container.
+:PgQuickStart    Start a container using your configured defaults.
+:PgStop          Stop a running container (picker if multiple).
+:PgRemove        Remove a container.
+:PgLogs          Tail container logs (last 80 lines).
+:PgList          List all postgres Docker containers.
+:PgLog           Re-open the output window.
+
+==============================================================================
+3. CONFIGURATION                                             *pg-docker-config*
+
+Call setup() in your init.lua: >
+
+  require("pg-docker").setup({
+    defaults = {
+      container_name = "postgresDB",
+      pg_version     = "16",
+      db_name        = "mydb",
+      db_user        = "admin",
+      db_password    = "password",
+      host_port      = "5432",
+    },
+    keymaps       = false,
+    keymap_prefix = "<leader>pg",
+    output_style  = "float",
+  })
+<
+
+==============================================================================
+4. KEYMAPS                                                  *pg-docker-keymaps*
+
+Enable with `keymaps = true`. Default prefix: <leader>pg
+
+  <prefix>n   PgCreate (wizard)
+  <prefix>q   PgQuickStart
+  <prefix>s   PgStop
+  <prefix>r   PgRemove
+  <prefix>l   PgLogs
+  <prefix>L   PgList
+  <prefix>o   PgLog (open output window)
+
+==============================================================================
+vim:ft=help:tw=78:
