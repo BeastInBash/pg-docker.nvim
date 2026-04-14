@@ -41,14 +41,14 @@ With custom defaults and keymaps:
 {
   "BeastInBash/pg-docker.nvim",
   cmd = { "PgCreate", "PgQuickStart", "PgStop", "PgRemove", "PgLogs", "PgList", "PgLog" },
-  keys = {
-    { "<leader>pgn", desc = "pg-docker: new container" },
-    { "<leader>pgq", desc = "pg-docker: quick start" },
-    { "<leader>pgs", desc = "pg-docker: stop" },
-    { "<leader>pgr", desc = "pg-docker: remove" },
-    { "<leader>pgl", desc = "pg-docker: logs" },
-    { "<leader>pgL", desc = "pg-docker: list" },
-  },
+keys = {
+        { "<leader>pgn", "<cmd>PgCreate<cr>", desc = "pg-docker: new container" },
+        { "<leader>pgq", "<cmd>PgQuickStart<cr>", desc = "pg-docker: quick start" },
+        { "<leader>pgs", "<cmd>PgStop<cr>", desc = "pg-docker: stop" },
+        { "<leader>pgr", "<cmd>PgRemove<cr>", desc = "pg-docker: remove" },
+        { "<leader>pgl", "<cmd>PgLogs<cr>", desc = "pg-docker: logs" },
+        { "<leader>pgL", "<cmd>PgList<cr>", desc = "pg-docker: list" },
+    },
   opts = {
     defaults = {
       container_name = "myapp-db",
